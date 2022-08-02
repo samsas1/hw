@@ -4,7 +4,7 @@
 <style>
     .progress-container{
         margin: 20px 0;
-        border: solid rgb(194, 194, 194) 1px;
+        border: solid rgb(174, 12, 12) 1px;
     }
     .progress-bar{
         height: 30px;

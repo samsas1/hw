@@ -1,5 +1,7 @@
 <script>
-import ProgressBar from './ProgressBar.svelte'
+import { createEventDispatcher } from 'svelte';
+import ProgressBar from './ProgressBar.svelte';
+const dispatch = createEventDispatcher();
 const totalSeconds = 20;
 let secondsLeft = totalSeconds;
 let isRunning = false;
@@ -12,6 +14,7 @@ function startTimer(){
         clearInterval(timer);
         isRunning = false;
         secondsLeft = totalSeconds;
+        dispatch('end', 'end timer');
     }
 
 }, 1000);
@@ -29,7 +32,7 @@ function startTimer(){
         margin:10px 0;
     }
     .start[disabled] {
-        background-color: rgb(194, 194, 194);
+        background-color: rgb(100, 194, 194);
         cursor: not-allowed;
     }
 </style>
